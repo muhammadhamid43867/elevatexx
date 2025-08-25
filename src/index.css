@@ -25,6 +25,40 @@
   }
 }
 
+/* Enhanced responsive navigation styles */
+@media (max-width: 640px) {
+  .anime-navbar-container {
+    padding: 0.5rem;
+  }
+  
+  .anime-navbar-item {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .anime-navbar-container {
+    padding: 0.75rem;
+  }
+  
+  .anime-navbar-item {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 769px) {
+  .anime-navbar-container {
+    padding: 1rem;
+  }
+  
+  .anime-navbar-item {
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+
 /* Remove cursor-none utility to keep default cursor visible */
 @layer utilities {
   .custom-cursor * {

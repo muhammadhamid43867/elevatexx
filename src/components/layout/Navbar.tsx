@@ -49,21 +49,21 @@ const Navbar = () => {
       <motion.div 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-5 md:top-16 left-5 md:left-20 z-[100] flex items-center"
+        className="fixed top-3 sm:top-4 md:top-12 lg:top-16 left-3 sm:left-4 md:left-12 lg:left-20 z-[100] flex items-center"
       >
-        <Link to="/" className="text-xl md:text-2xl font-serif font-bold text-white hover:text-white/80 transition-colors cursor-pointer">
-          <span className="block md:hidden text-4xl leading-none">X</span>
-          <span className="hidden md:block">Elevate X</span>
+        <Link to="/" className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-white hover:text-white/80 transition-colors cursor-pointer">
+          <span className="block sm:hidden text-3xl leading-none">X</span>
+          <span className="hidden sm:block">Elevate X</span>
         </Link>
       </motion.div>
       
       {/* Updated Start Project Button */}
-      <div className="fixed top-8 md:top-16 right-4 md:right-20 z-[100] hidden md:block pointer-events-auto">
+      <div className="fixed top-6 sm:top-8 md:top-12 lg:top-16 right-3 sm:right-4 md:right-12 lg:right-20 z-[100] hidden sm:block pointer-events-auto">
         <motion.button
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           onClick={() => setIsProjectFormOpen(true)}
-          className="relative w-full h-full bg-white text-black rounded-full font-medium hover:bg-white/90 transition-all cursor-pointer select-none px-6 md:px-8 py-3 md:py-4 pointer-events-auto text-sm md:text-base"
+          className="relative w-full h-full bg-white text-black rounded-full font-medium hover:bg-white/90 transition-all cursor-pointer select-none px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 pointer-events-auto text-sm md:text-base min-h-[44px]"
           {...buttonHandlers}
         >
           Start Your Project
@@ -71,8 +71,8 @@ const Navbar = () => {
       </div>
       
       {/* Existing Navbar with reduced size for mobile */}
-      <div className="py-1 md:py-4 text-xs md:text-sm">
-        <AnimeNavBar items={items} defaultActive="Home" className="text-xs py-2" />
+      <div className="py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base">
+        <AnimeNavBar items={items} defaultActive="Home" />
       </div>
 
       {/* Project Form */}

@@ -28,7 +28,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 640);
     };
 
     handleResize();
@@ -107,10 +107,10 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
   if (!mounted) return null;
 
   return (
-    <div className="fixed top-2 md:top-5 left-0 right-0 z-50">
-      <div className="flex justify-center pt-3 md:pt-6">
+    <div className="fixed top-1 sm:top-2 md:top-4 lg:top-5 left-0 right-0 z-50">
+      <div className="flex justify-center pt-2 sm:pt-3 md:pt-4 lg:pt-6 px-2 sm:px-4">
         <motion.div 
-          className="flex items-center gap-1 md:gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-1 md:py-2 px-1 md:px-2 rounded-full shadow-lg relative scale-75 md:scale-100"
+          className="flex items-center gap-1 sm:gap-2 md:gap-3 bg-black/60 border border-white/15 backdrop-blur-lg py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 md:px-4 rounded-full shadow-lg relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -131,7 +131,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                 onClick={() => handleNavClick(item)}
                 onMouseEnter={() => setHoveredTab(item.name)}
                 onMouseLeave={() => setHoveredTab(null)}
-                className={`relative cursor-pointer text-xs md:text-sm font-semibold px-3 md:px-6 py-2 md:py-3 rounded-full transition-all duration-300 ${
+                className={`relative cursor-pointer text-xs sm:text-sm md:text-base font-semibold px-2 sm:px-3 md:px-4 lg:px-6 py-2 sm:py-2.5 md:py-3 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
                   isActive ? "text-white" : "text-white/70 hover:text-white"
                 }`}
               >
@@ -159,7 +159,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                 )}
 
                 <motion.span
-                  className="hidden md:inline relative z-10"
+                  className="hidden sm:inline relative z-10 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
@@ -167,11 +167,11 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                   {item.name}
                 </motion.span>
                 <motion.span 
-                  className="md:hidden relative z-10"
+                  className="sm:hidden relative z-10"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Icon size={16} strokeWidth={2.5} />
+                  <Icon size={18} strokeWidth={2.5} />
                 </motion.span>
           
                 <AnimatePresence>
@@ -187,8 +187,8 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
 
                 {isActive && (
                   <motion.div
-                    layoutId="anime-mascot"
-                    className="absolute -top-8 md:-top-12 left-1/2 -translate-x-1/2 pointer-events-none scale-75 md:scale-100"
+                    layoutId="anime-mascot" 
+                    className="absolute -top-6 sm:-top-8 md:-top-10 lg:-top-12 left-1/2 -translate-x-1/2 pointer-events-none scale-75 sm:scale-90 md:scale-100"
                     initial={false}
                     transition={{
                       type: "spring",
@@ -196,9 +196,9 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                       damping: 30,
                     }}
                   >
-                    <div className="relative w-12 h-12">
+                    <div className="relative w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12">
                       <motion.div 
-                        className="absolute w-10 h-10 bg-white rounded-full left-1/2 -translate-x-1/2"
+                        className="absolute w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 bg-white rounded-full left-1/2 -translate-x-1/2"
                         animate={
                           hoveredTab ? {
                             scale: [1, 1.1, 1],
@@ -218,7 +218,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                         }
                       >
                         <motion.div 
-                          className="absolute w-2 h-2 bg-black rounded-full"
+                          className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-black rounded-full"
                           animate={
                             hoveredTab ? {
                               scaleY: [1, 0.2, 1],
@@ -231,7 +231,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                           style={{ left: '25%', top: '40%' }}
                         />
                         <motion.div 
-                          className="absolute w-2 h-2 bg-black rounded-full"
+                          className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-black rounded-full"
                           animate={
                             hoveredTab ? {
                               scaleY: [1, 0.2, 1],
@@ -244,14 +244,14 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                           style={{ right: '25%', top: '40%' }}
                         />
                         <motion.div 
-                          className="absolute w-2 h-1.5 bg-pink-300 rounded-full"
+                          className="absolute w-1.5 sm:w-2 h-1 sm:h-1.5 bg-pink-300 rounded-full"
                           animate={{
                             opacity: hoveredTab ? 0.8 : 0.6
                           }}
                           style={{ left: '15%', top: '55%' }}
                         />
                         <motion.div 
-                          className="absolute w-2 h-1.5 bg-pink-300 rounded-full"
+                          className="absolute w-1.5 sm:w-2 h-1 sm:h-1.5 bg-pink-300 rounded-full"
                           animate={{
                             opacity: hoveredTab ? 0.8 : 0.6
                           }}
@@ -259,7 +259,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                         />
                         
                         <motion.div 
-                          className="absolute w-4 h-2 border-b-2 border-black rounded-full"
+                          className="absolute w-3 sm:w-4 h-1.5 sm:h-2 border-b-2 border-black rounded-full"
                           animate={
                             hoveredTab ? {
                               scaleY: 1.5,
@@ -296,7 +296,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                         </AnimatePresence>
                       </motion.div>
                       <motion.div
-                        className="absolute -bottom-1 left-1/2 w-4 h-4 -translate-x-1/2"
+                        className="absolute -bottom-1 left-1/2 w-3 sm:w-4 h-3 sm:h-4 -translate-x-1/2"
                         animate={
                           hoveredTab ? {
                             y: [0, -4, 0],
