@@ -75,8 +75,8 @@ const Hero = () => {
         <div className="absolute w-2 h-2 bg-white rounded-full top-1/3 right-1/4 animate-pulse delay-700" />
       </div>
 
-      {/* Main content - Added more top padding */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 flex flex-col lg:flex-row items-start justify-between gap-12">
+      {/* Main content - Optimized top padding */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 md:pt-40 lg:pt-44 flex flex-col lg:flex-row items-start justify-between gap-12">
         <div className="text-center lg:text-left lg:max-w-2xl">
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6">
             Elevate Your Digital
