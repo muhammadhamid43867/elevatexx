@@ -110,7 +110,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
     <div className="fixed top-1 sm:top-2 md:top-3 lg:top-4 left-0 right-0 z-50">
       <div className="flex justify-center pt-2 sm:pt-3 md:pt-3 lg:pt-4 px-2 sm:px-4">
         <motion.div 
-          className="flex items-center gap-1 sm:gap-2 md:gap-3 bg-black/60 border border-white/15 backdrop-blur-lg py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 md:px-4 rounded-full shadow-lg relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+          className="flex items-center gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-4 bg-black/60 border border-white/15 backdrop-blur-lg py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 md:px-4 lg:px-6 rounded-full shadow-lg relative w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-3xl"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -159,7 +159,7 @@ export function AnimeNavBar({ items, defaultActive = "Home" }: NavBarProps) {
                 )}
 
                 <motion.span
-                  className="hidden sm:inline relative z-10 text-center"
+                  className="hidden sm:inline relative z-10 text-center whitespace-nowrap"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
