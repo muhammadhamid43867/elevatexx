@@ -20,18 +20,18 @@ const items = [
   {
     name: "Our Work",
     url: "/#work",
-    icon: PenSquare
-  },
-  {
-    name: "Portfolio",
-    url: "/portfolio",
     icon: PenSquare,
   },
+  // {
+  //   name: "Portfolio",
+  //   url: "/portfolio",
+  //   icon: PenSquare,
+  // },
   {
     name: "Our Clients",
     url: "/#testimonials",
     icon: Users,
-  },
+  }
   {
     name: "Resources",
     url: "/resources",
