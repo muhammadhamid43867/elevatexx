@@ -1,42 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, X, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useCursorHandlers } from '../../hooks/useCursor';
+import { getFeaturedProjects } from '../../data/portfolioData';
 
-// Define project type with optional video property
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  tags: string[];
-  video?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Modern Landing Page",
-    description: "Product landing page for a Video editing agency",
-    image: "https://images.unsplash.com/vector-1742413749811-8133c8c64ced?q=80&w=2490&auto=format&fit=crop",
-    link: "https://nexusgrowthh.com/",
-    tags: ["React", "TypeScript", "Tailwind"]
-  },
-  {
-    title: "AI Chat Assistant", 
-    description: "Custom chatbot with natural language processing and seamless API integration.",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2106&auto=format&fit=crop",
-    link: "#",
-    tags: ["OpenAI", "Node.js", "WebSocket"],
-    video: "https://drive.google.com/file/d/1f2pgrJMDR4XuYu2RnQ8UYm9pYY7XdR6V/preview"
-  },
-  {
-    title: "Portfolio Website",
-    description: "modern portfolio website for a software engineer",
-    image: "https://images.unsplash.com/vector-1742413284810-e36a1454175f?q=80&w=2490&auto=format&fit=crop", 
-    link: "https://friendly-haupia-a1f91e.netlify.app/",
-    tags: ["React", "TypeScript", "Tailwind"]
-  }
-];
+// Get featured projects from data
+const projects = getFeaturedProjects();
 
 // Video popup component
 const VideoPopup = ({ isOpen, onClose, videoSrc }: { isOpen: boolean; onClose: () => void; videoSrc: string }) => {
@@ -196,6 +166,24 @@ const OurWork = () => {
             </motion.a>
           ))}
         </div>
+
+        {/* View More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-white/90 transition-all group"
+            {...useCursorHandlers('button', 'View All Projects')}
+          >
+            <span>View More Projects</span>
+            <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
 
       {/* Video Popup */}

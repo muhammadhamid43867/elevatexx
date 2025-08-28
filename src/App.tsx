@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import Resources from './components/pages/Resources';
+import Portfolio from './components/pages/Portfolio';
 import Footer from './components/home/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import CircularProgress from './components/ui/CircularProgress';
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
         <Footer />
       </main>

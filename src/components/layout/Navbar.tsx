@@ -23,6 +23,11 @@ const items = [
     icon: PenSquare,
   },
   {
+    name: "Portfolio",
+    url: "/portfolio",
+    icon: PenSquare,
+  },
+  {
     name: "Our Clients",
     url: "/#testimonials",
     icon: Users,
