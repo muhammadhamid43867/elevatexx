@@ -14,14 +14,14 @@ const items = [
   },
   {
     name: "Services",
-    url: "/#services",
+    url: "/#services"
     icon: FileText,
   },
-  {
-    name: "Our Work",
-    url: "/#work",
-    icon: PenSquare,
-  },
+  // {
+  //   name: "Our Work",
+  //   url: "/#work",
+  //   icon: PenSquare,
+  // },
   {
     name: "Portfolio",
     url: "/portfolio",
